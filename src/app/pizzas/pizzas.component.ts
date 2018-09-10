@@ -1,14 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Pizza} from '../pizza';
-import { ActivatedRoute, ParamMap } from '@angular/router';
 import {PizzasService} from '../pizzas.service';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './pizzas.component.html',
   styleUrls: ['./pizzas.component.css'],
-
 })
 export class PizzasComponent implements OnInit, OnDestroy {
   selectedPizza: Pizza;
@@ -26,12 +24,18 @@ export class PizzasComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
   onSelect(pizza: Pizza): void {
-  this.selectedPizza = pizza;
+    this.selectedPizza = pizza;
   }
 
   getPizzas(): Pizza[] {
     return this.pizzas;
+  }
+
+  addToBasket(pizza: Pizza): void {
+    console.log('aaaa');
+    this.service.addPizzaToBasket(pizza);
   }
 
 }

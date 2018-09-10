@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pizza} from './pizza';
+import {PizzasComponent} from './pizzas/pizzas.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PizzasService {
 
+  basket: Pizza[] = [];
+
   constructor(
-    readonly http: HttpClient
+    readonly http: HttpClient,
   ) { }
 
   getPizzas(): Observable<Pizza[]> {
@@ -20,6 +23,12 @@ export class PizzasService {
     return this.http.get<Pizza>('api/pizzas/${id}');
   }
 
+  addPizzaToBasket(pizza: Pizza): void {
+    this.basket.push(pizza);
+  }
 
+  getPizzasInBasket(): Pizza[] {
+    return this.basket;
+  }
 
 }

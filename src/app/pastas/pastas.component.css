@@ -16,7 +16,7 @@
   background-color: #f8ffc0;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 3em;
   border-radius: 4px;
 }
 .pastas li.selected:hover {
@@ -45,4 +45,10 @@
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+.description {
+  color: firebrick;
+  margin-left: 6%;
+  font-style: italic;
 }
