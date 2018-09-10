@@ -1,0 +1,14 @@
+<h2>Nasze pizze: </h2>
+<ul class="pizzas">
+   <li *ngFor="let pizza of getPizzas()">
+     <span class="badge">{{pizza.id}}</span>
+     <span>{{pizza.name}} {{pizza.price}}</span>
+
+     <br>
+     <span class="description">{{pizza.description}}
+       <button>Dodaj do koszyka</button>
+     </span>
+   </li>
+</ul>
+
+

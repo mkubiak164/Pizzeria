@@ -1,0 +1,11 @@
+<h2>Nasze makarony: </h2>
+<ul class="pastas">
+  <li *ngFor="let pasta of getPastas()">
+    <span class="badge">{{pasta.id}}</span>
+    <span>{{pasta.name}}</span>
+    <br>
+    <span class="description">{{pasta.description}}
+    <button>Dodaj do koszyka</button>
+    </span>
+  </li>
+</ul>

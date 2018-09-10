@@ -1,0 +1,48 @@
+
+.selected {
+  background-color: #dcd20f !important;
+  color: #f8ffc0;
+}
+.pastas {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 40em;
+}
+.pastas li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #f8ffc0;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.pastas li.selected:hover {
+  background-color: #f8ffc0 !important;
+  color: #8b4e5e;
+}
+.pastas li:hover {
+  color: #8b4e5e;
+  background-color: #dd97b9;
+  left: .1em;
+}
+.pastas .text {
+  position: relative;
+  top: -3px;
+}
+.pastas .badge {
+  display: inline-block;
+  font-size: small;
+  color: #f8ffc0;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #c66c58;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}

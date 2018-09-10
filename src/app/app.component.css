@@ -1,0 +1,21 @@
+div {
+  display: flex;
+  justify-content: left;
+}
+
+h1 {
+  background: #f8ffc0;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: firebrick;
+  border: none;
+  padding: 15px 40px;
+  text-align: center;
+  color: #f8ffc0;
+  display: inline-block;
+  font-size: x-large;
+}
+

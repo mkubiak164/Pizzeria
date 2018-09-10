@@ -1,0 +1,51 @@
+<form [formGroup]="adressForm" (ngSubmit)="onSubmit()">
+
+<h3>Podaj adres dostawy</h3>
+
+<label>
+  Imie:
+  <input type="text" formControlName="name">
+</label><br>
+
+<label>
+  Nazwisko:
+  <input type="text" formControlName="lastName">
+</label><br>
+
+<label>
+  Telefon:
+  <input type="text" formControlName="phone">
+</label><br>
+
+<label>
+  Email:
+  <input type="text" formControlName="email">
+</label><br>
+
+<label>
+  Kraj:
+  <input type="text" formControlName="country">
+</label><br>
+
+<label>
+  Ulica:
+  <input type="text" formControlName="street">
+</label><br>
+
+<label>
+  Lokal:
+  <input type="text" formControlName="number">
+</label><br>
+
+<label>
+  Pietro:
+  <input type="number" formControlName="floor">
+</label><br>
+
+  <button type="submit" [disabled]="!adressForm.valid">Gotowe!</button>
+</form>
+
+<p>
+  <button (click)="addAdress()">Add Address</button>
+</p>
+

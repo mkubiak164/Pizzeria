@@ -1,0 +1,57 @@
+{
+  "pizzas": [
+    {
+      "id": 1,
+      "name": "Pizza Margherita",
+      "isAvailable": true,
+      "description": "Sos, ser",
+      "price": "22"
+    },
+    {
+      "id": 2,
+      "name": "Pizza Funghi",
+      "isAvailable": true,
+      "description": "Sos, ser, pieczarki",
+      "price": "23.50"
+    },
+    {
+      "id": 3,
+      "name": "Kebab",
+      "isAvailable": true,
+      "description": "kebab, kapusta pekińska, pomidor, ogórek",
+      "price": "13.90"
+    }
+  ],
+  "pastas":[
+    {
+      "id": 1,
+      "name": "Spaghetti Bolognese",
+      "isAvailable": false,
+      "description": "Sos boloński",
+      "price": "14"
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti Siciliana",
+      "isAvailable": true,
+      "description": "Sos boloński z szynką i kukurydzą",
+      "price": "17.50"
+    }
+
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "pizzaIds": [1, 2],
+      "pastaIds": [2],
+      "drinkIds": []
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "password": "admin"
+    }
+  ]
+}
