@@ -10,11 +10,18 @@ h1 {
 h2, h3 {
   color: firebrick;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+  font-weight: bold;
+  font-size: xx-large;
+  /*background-color: #f8ffc0;*/
+  text-shadow: 1px 1px 5px #f8ffc0;
+
+
+
 }
 body {
   margin: 2em;
-  background-color: #dbdc83;
+  /*background-color: #dbdc83;*/
+  background-image: url("/tlo3.jpg") ;
 }
 body, input[text], button {
   color: #e17d00;

@@ -32,4 +32,8 @@ export class PastasComponent implements OnInit, OnDestroy {
     return this.pastas;
   }
 
+  addToBasket(pasta: Pasta): void {
+    this.service.addPastaToBasket(pasta);
+  }
+
 }

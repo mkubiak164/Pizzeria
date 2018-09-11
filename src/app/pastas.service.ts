@@ -8,6 +8,8 @@ import {Observable} from 'rxjs';
 })
 export class PastasService {
 
+  basket: Pasta[] = [];
+
   constructor(
     readonly http: HttpClient
   ) { }
@@ -18,6 +20,14 @@ export class PastasService {
 
   getPasta(id: number): Observable<Pasta> {
     return this.http.get<Pasta>('api/pastas/${id}');
+  }
+
+  addPastaToBasket(pasta: Pasta): void {
+    this.basket.push(pasta);
+  }
+
+  getPastasInBasket(): Pasta[] {
+    return this.basket;
   }
 
 }

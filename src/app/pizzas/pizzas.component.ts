@@ -4,7 +4,7 @@ import {PizzasService} from '../pizzas.service';
 import {Observable, Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-pizzas',
   templateUrl: './pizzas.component.html',
   styleUrls: ['./pizzas.component.css'],
 })
@@ -34,7 +34,6 @@ export class PizzasComponent implements OnInit, OnDestroy {
   }
 
   addToBasket(pizza: Pizza): void {
-    console.log('aaaa');
     this.service.addPizzaToBasket(pizza);
   }
 

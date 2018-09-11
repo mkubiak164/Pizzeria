@@ -1,11 +1,16 @@
 <h2>Nasze makarony: </h2>
 <ul class="pastas">
   <li *ngFor="let pasta of getPastas()">
-    <span class="badge">{{pasta.id}}</span>
-    <span>{{pasta.name}}</span>
-    <br>
-    <span class="description">{{pasta.description}}
-    <button>Dodaj do koszyka</button>
-    </span>
+    <div *ngIf="pasta.isAvailable; else elseBlock">
+      <span class="badge">{{pasta.id}}</span>
+      <span>{{pasta.name}} {{pasta.price}}</span>
+      <br>
+      <span class="description">{{pasta.description}}
+      <button (click)="addToBasket(pasta)">Dodaj do koszyka</button>
+      </span>
+    </div>
+    <ng-template #elseBlock>
+      <span class="badge">{{pasta.id}}</span>Produkt niedostepny
+    </ng-template>
   </li>
 </ul>

@@ -1,3 +1,7 @@
+
+
+  <div><h3>Twój koszyk </h3><br>
+
 <li *ngFor="let pizza of getPizzasInBasket()">
   <span class="badge">{{pizza.id}}</span>
   <span>{{pizza.name}} {{pizza.price}}</span>
@@ -7,4 +11,19 @@
        <button>X</button>
      </span>
 </li>
-<app-adress></app-adress>
+    <li *ngFor="let pasta of getPastasInBasket()" >
+      <span class="badge">{{pasta.id}}</span>
+      <span>{{pasta.name}} {{pasta.price}}</span>
+
+      <br>
+      <span class="description">{{pasta.description}}
+       <button>X</button>
+     </span>
+    </li>
+
+
+
+  </div>
+  <div style="display: inline-block">
+<app-adress></app-adress></div>
+

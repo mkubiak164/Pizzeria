@@ -1,5 +1,4 @@
 
-
 .selected {
   background-color: #dcd20f !important;
   color: #f8ffc0;
@@ -11,7 +10,6 @@
   width: 40em;
 }
 .pizzas li {
-  cursor: pointer;
   position: relative;
   left: 0;
   background-color: #f8ffc0;
@@ -19,15 +17,6 @@
   padding: .3em 0;
   height: 3em;
   border-radius: 4px;
-}
-.pizzas li.selected:hover {
-  background-color: #f8ffc0 !important;
-  color: #8b4e5e;
-}
-.pizzas li:hover {
-  color: #8b4e5e;
-  background-color: #dd97b9;
-  left: .1em;
 }
 .pizzas .text {
   position: relative;
