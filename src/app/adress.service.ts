@@ -18,7 +18,9 @@ export class AdressService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
 
-    const res = this.http.post('http://localhost:3000/orders', order, headers).subscribe(
+    const res = this.http.post('http://localhost:3000/orders', order, {
+      headers: headers,
+    }).subscribe(
       resp => console.log('hurra udalo sie! ' + resp)
     );
 

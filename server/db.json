@@ -49,6 +49,27 @@
         2
       ],
       "drinkIds": []
+    },
+    {
+      "pizzaIds": [
+        1,
+        2
+      ],
+      "pastaIds": [
+        1,
+        2
+      ],
+      "adress": {
+        "name": "Marta",
+        "lastName": "Test",
+        "phone": "214532525",
+        "email": "fsfsd@xzc.pl",
+        "country": "adsada",
+        "street": "adasd",
+        "number": "ad",
+        "floor": 3421
+      },
+      "id": 2
     }
   ],
   "users": [
