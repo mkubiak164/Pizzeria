@@ -13,23 +13,25 @@ import {AdressService} from '../adress.service';
 
 export class AdressComponent {
 
-  adressService: AdressService;
-
-  adressData = new FormGroup({
-    name: new FormControl(),
-    lastName: new FormControl(),
-    phone: new FormControl(),
-    email: new FormControl(),
-    country: new FormControl(),
-    street: new FormControl(),
-    number: new FormControl(),
-    floor: new FormControl()
+    adressData = new FormGroup({
+      name: new FormControl(),
+      lastName: new FormControl(),
+      phone: new FormControl(),
+      email: new FormControl(),
+      country: new FormControl(),
+      street: new FormControl(),
+      number: new FormControl(),
+      floor: new FormControl()
   });
 
-  constructor(private fb: FormBuilder) {  }
+  constructor(private fb: FormBuilder, private adressService: AdressService) {}
 
-    onSubmit() {
-      this.adressService.save();
-    }
+  onSubmit() {
+    this.adressService.save(this.adressData.value);
+  }
+
+  getAdressData() {
+    return this.adressData;
+  }
 
 }

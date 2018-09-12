@@ -15,11 +15,9 @@ export class BasketService {
 
   private pizzas = new Subject<Pizza[]>();
   pastas: Pasta[];
-  order: Order;
-  pizzaService: PizzasService;
-  pastaService: PastasService;
 
-  constructor(readonly http: HttpClient, private basketComponent: BasketComponent) { }
+  constructor(readonly http: HttpClient, private basketComponent: BasketComponent,
+              private pizzaService: PizzasService, private pastaService: PastasService) { }
 
   addPizza(pizza: Pizza): void {
    // this.http.post('url', pizza).subscribe(res => this.pizzas = res);
@@ -34,14 +32,16 @@ export class BasketService {
   }
 
   addBasketToOrder(): void {
-    const pizzas = this.basketComponent.getPizzasInBasket();
-    const pizzaIds = this.pizzaService.getPizzasIds(pizzas);
-    this.order.pizzaIds = pizzaIds;
+    let order = this.getOrder();
 
+    const pizzas = this.basketComponent.getPizzasInBasket();
+    order.pizzaIds = this.pizzaService.getPizzasIds(pizzas);
 
     const pastas = this.basketComponent.getPastasInBasket();
-    const pastaIds = this.pastaService.getPastaIds(pastas);
-    this.order.pastaIds = pastaIds;
+    order.pastaIds = this.pastaService.getPastaIds(pastas);
   }
 
+  getOrder(): Order {
+    return this.basketComponent.getOrder();
+  }
 }

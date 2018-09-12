@@ -22,7 +22,7 @@
       "price": "13.90"
     }
   ],
-  "pastas":[
+  "pastas": [
     {
       "id": 1,
       "name": "Spaghetti Bolognese",
@@ -37,13 +37,17 @@
       "description": "Sos boloński z szynką i kukurydzą",
       "price": "17.50"
     }
-
   ],
   "orders": [
     {
       "id": 1,
-      "pizzaIds": [1, 2],
-      "pastaIds": [2],
+      "pizzaIds": [
+        1,
+        2
+      ],
+      "pastaIds": [
+        2
+      ],
       "drinkIds": []
     }
   ],

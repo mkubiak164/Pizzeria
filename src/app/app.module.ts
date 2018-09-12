@@ -56,7 +56,7 @@ const appRoutes: Routes = [
     ),
 
   ],
-  providers: [PizzasService, BasketService, BasketComponent],
+  providers: [PizzasService, BasketService, BasketComponent, AdressComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

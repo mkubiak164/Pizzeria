@@ -32,15 +32,12 @@ export class PizzasService {
   }
 
   getPizzasIds(pizzas: Pizza[]): number[] {
-    pizzas = [];
     const pizzasIds = [];
     for (let i = 0; i < pizzas.length; i++) {
         pizzasIds.push(pizzas[i].id);
     }
     return pizzasIds;
   }
-
-
 
   getPizzasInBasket(): Pizza[] {
     return this.basket;

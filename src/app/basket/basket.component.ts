@@ -4,8 +4,8 @@ import {Basket} from '../basket';
 import {Pizza} from '../pizza';
 import {Pasta} from '../pasta';
 import {PizzasService} from '../pizzas.service';
-import {identifierName} from '@angular/compiler';
 import {PastasService} from '../pastas.service';
+import {Order} from '../order';
 
 @Component({
   selector: 'app-basket',
@@ -16,6 +16,7 @@ export class BasketComponent implements OnInit {
 
   pizzas: Pizza[];
   pastas: Pasta[];
+  order: Order = new Order();
 
   constructor(private pizzaService: PizzasService, private pastaService: PastasService) { }
 
@@ -32,6 +33,10 @@ export class BasketComponent implements OnInit {
 
   countBasket(): number {
     return this.getPizzasInBasket().length + this.getPastasInBasket().length;
+  }
+
+  getOrder(): Order {
+    return this.order;
   }
 
 }
