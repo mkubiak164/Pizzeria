@@ -1,17 +1,21 @@
 
-<app-basket></app-basket>
+<!--<app-basket></app-basket>-->
 
 <div style="display: inline-block">
 <h2>Nasze pizze: </h2>
 <ul class="pizzas">
    <li *ngFor="let pizza of getPizzas()">
+     <div *ngIf="pizza.isAvailable; else elseBlock">
      <span class="badge">{{pizza.id}}</span>
-     <span>{{pizza.name}} {{pizza.price}}</span>
-
+       <span>{{pizza.name}}  {{pizza.price}}</span>
      <br>
      <span class="description">{{pizza.description}}
        <button (click)="addToBasket(pizza)">Dodaj do koszyka</button>
      </span>
+     </div>
+     <ng-template #elseBlock>
+       <span class="badge">{{pizza.id}}</span>Produkt niedostępny
+     </ng-template>
    </li>
 </ul>
   </div>

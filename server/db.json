@@ -17,7 +17,7 @@
     {
       "id": 3,
       "name": "Kebab",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "kebab, kapusta pekińska, pomidor, ogórek",
       "price": "13.90"
     }
@@ -26,7 +26,7 @@
     {
       "id": 1,
       "name": "Spaghetti Bolognese",
-      "isAvailable": false,
+      "isAvailable": true,
       "description": "Sos boloński",
       "price": "14"
     },

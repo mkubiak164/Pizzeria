@@ -2,6 +2,8 @@ import { Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import {FormArray} from '@angular/forms';
+import {FormGroup, FormControl} from '@angular/forms';
+import {AdressService} from '../adress.service';
 
 @Component({
   selector: 'app-adress',
@@ -11,34 +13,23 @@ import {FormArray} from '@angular/forms';
 
 export class AdressComponent {
 
-    adressForm = this.fb.group({
-      name: [''],
-      lastName: [''],
-      phone: [''],
-      email: [''],
-      country: [''],
-      street: [''],
-      number: [''],
-      floor: ['']
-    });
+  adressService: AdressService;
 
-    constructor(private fb: FormBuilder) {  }
+  adressData = new FormGroup({
+    name: new FormControl(),
+    lastName: new FormControl(),
+    phone: new FormControl(),
+    email: new FormControl(),
+    country: new FormControl(),
+    street: new FormControl(),
+    number: new FormControl(),
+    floor: new FormControl()
+  });
 
-    addAdress() {
-      this.adressForm.patchValue({
-        name: [''],
-        lastName: [''],
-        phone: [''],
-        email: [''],
-        country: [''],
-        street: [''],
-        number: [''],
-        floor: ['']
-      });
-    }
+  constructor(private fb: FormBuilder) {  }
 
     onSubmit() {
-      console.warn(this.adressForm.value);
+      this.adressService.save();
     }
 
 }

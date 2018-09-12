@@ -1,0 +1,26 @@
+
+
+input {
+
+  border: 2px solid firebrick;
+  border-radius: 4px;
+  height: 20px;
+  width: 100%;
+  float: right;
+}
+
+label {
+
+  color: firebrick;
+  font-size: 15px;
+  background-color: #f8ffc0;
+
+}
+
+button {
+  background-color: firebrick;
+  color: #f8ffc0;
+  border: firebrick;
+  width: 100%;
+
+}

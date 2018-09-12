@@ -30,4 +30,8 @@ export class BasketComponent implements OnInit {
     return this.pastaService.getPastasInBasket();
   }
 
+  countBasket(): number {
+    return this.getPizzasInBasket().length + this.getPastasInBasket().length;
+  }
+
 }

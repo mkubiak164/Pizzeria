@@ -15,6 +15,7 @@ import { DishComponent } from './dish/dish.component';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {PizzasService} from './pizzas.service';
+import {BasketService} from './basket.service';
 
 
 const appRoutes: Routes = [
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
     ),
 
   ],
-  providers: [PizzasService],
+  providers: [PizzasService, BasketService, BasketComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

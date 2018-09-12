@@ -22,6 +22,15 @@ export class PastasService {
     return this.http.get<Pasta>('api/pastas/${id}');
   }
 
+  getPastaIds(pastas: Pasta[]): number[] {
+    pastas = [];
+    const pastasIds = [];
+    for (let i = 0; i < pastas.length; i++) {
+      pastasIds.push(pastas[i].id);
+    }
+    return pastasIds;
+  }
+
   addPastaToBasket(pasta: Pasta): void {
     this.basket.push(pasta);
   }

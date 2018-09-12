@@ -1,4 +1,4 @@
-<form [formGroup]="adressForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="adressData" (ngSubmit)="onSubmit()">
 
 <h3>Podaj adres dostawy</h3>
 
@@ -42,10 +42,9 @@
   <input type="number" formControlName="floor">
 </label><br>
 
-  <button type="submit" [disabled]="!adressForm.valid">Gotowe!</button>
-</form>
+  <!--<button type="submit">Gotowe!</button>-->
++
+  <button (click)="onSubmit()">Dodaj zamówienie</button>
 
-<p>
-  <button (click)="addAdress()">Add Address</button>
-</p>
+</form>
 

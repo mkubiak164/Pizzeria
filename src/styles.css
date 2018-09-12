@@ -4,12 +4,12 @@
 
 h1 {
   color: rgba(198, 108, 88, 0.96);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Elephant;
   font-size: 250%;
 }
 h2, h3 {
   color: firebrick;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Elephant;
   font-weight: bold;
   font-size: xx-large;
   /*background-color: #f8ffc0;*/
@@ -19,17 +19,17 @@ h2, h3 {
 
 }
 body {
-  margin: 2em;
+  margin-top: 0;
   /*background-color: #dbdc83;*/
-  background-image: url("/tlo3.jpg") ;
+  background-image: url("/oregano2.jpg") ;
 }
 body, input[text], button {
   color: #e17d00;
-  font-family: Cambria, Georgia;
+  font-family: Elephant;
 }
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Elephant;
 }
 
 /* Navigation link styles */
