@@ -1,6 +1,6 @@
 div {
-  display: flex;
-  justify-content: left;
+  display: flow;
+  float: right;
 }
 header {
   background: #f8ffc0;
@@ -11,14 +11,10 @@ header {
   font-style: italic;
   font-family: Elephant;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
 
 }
-
-/*h1 {*/
-  /*background: #f8ffc0;*/
-  /*padding: 20px;*/
-  /*border-radius: 4px;*/
-/*}*/
 
 button {
   background-color: firebrick;

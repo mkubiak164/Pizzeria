@@ -6,6 +6,7 @@ import {Pasta} from '../pasta';
 import {PizzasService} from '../pizzas.service';
 import {PastasService} from '../pastas.service';
 import {Order} from '../order';
+import {BasketService} from '../basket.service';
 
 @Component({
   selector: 'app-basket',
@@ -17,10 +18,12 @@ export class BasketComponent implements OnInit {
   pizzas: Pizza[];
   pastas: Pasta[];
   order: Order = new Order();
+  showAdress: boolean;
 
   constructor(private pizzaService: PizzasService, private pastaService: PastasService) { }
 
   ngOnInit() {
+    this.setShowAdress(true);
   }
 
   getPizzasInBasket(): Pizza[] {
@@ -37,6 +40,10 @@ export class BasketComponent implements OnInit {
 
   getOrder(): Order {
     return this.order;
+  }
+
+  setShowAdress(show: boolean) {
+    this.showAdress = show;
   }
 
 }

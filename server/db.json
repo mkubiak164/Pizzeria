@@ -48,7 +48,17 @@
       "pastaIds": [
         2
       ],
-      "drinkIds": []
+      "drinkIds": [],
+      "adress": {
+        "name": "Marta",
+        "lastName": "Test",
+        "phone": "214532525",
+        "email": "fsfsd@xzc.pl",
+        "country": "Polska",
+        "street": "Wiejska",
+        "number": "34",
+        "floor": 3
+      }
     },
     {
       "pizzaIds": [
@@ -64,12 +74,50 @@
         "lastName": "Test",
         "phone": "214532525",
         "email": "fsfsd@xzc.pl",
-        "country": "adsada",
-        "street": "adasd",
-        "number": "ad",
-        "floor": 3421
+        "country": "Hiszpania",
+        "street": "Placa del Sol",
+        "number": "1",
+        "floor": 0
       },
       "id": 2
+    },
+    {
+      "pizzaIds": [
+        1,
+        2
+      ],
+      "pastaIds": [
+        1
+      ],
+      "adress": {
+        "name": "Marta",
+        "lastName": null,
+        "phone": null,
+        "email": null,
+        "country": "Polska",
+        "street": "Leśna",
+        "number": "32",
+        "floor": 2
+      },
+      "id": 3
+    },
+    {
+      "pizzaIds": [
+        1,
+        1
+      ],
+      "pastaIds": [],
+      "adress": {
+        "name": null,
+        "lastName": null,
+        "phone": null,
+        "email": null,
+        "country": "Polska",
+        "street": "Gruntowa",
+        "number": "753",
+        "floor": 0
+      },
+      "id": 4
     }
   ],
   "users": [

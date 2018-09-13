@@ -1,0 +1,19 @@
+<h2>Zamówienia</h2>
+
+<table id="orders">
+  <thead>
+  <th>Id</th>
+  <th>Adres</th>
+  <th>Czas realizacji</th>
+  <th>Stan</th>
+  <th>Szczegóły</th>
+  </thead>
+  <tr *ngFor="let order of getOrders()">
+    <td>{{order.id}}</td>
+    <td>{{order.adress.street + " " + order.adress.number + " piętro: " + order.adress.floor + ", " + order.adress.country}}</td>
+    <td>40 minut</td>
+    <td>w trakcie</td>
+    <td><button>Podlgąd</button></td>
+  </tr>
+</table>
+

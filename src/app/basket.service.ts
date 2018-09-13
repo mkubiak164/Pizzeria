@@ -8,31 +8,24 @@ import {BasketComponent} from './basket/basket.component';
 import {Order} from './order';
 import {PastasService} from './pastas.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
 
-  private pizzas = new Subject<Pizza[]>();
   pastas: Pasta[];
 
   constructor(readonly http: HttpClient, private basketComponent: BasketComponent,
               private pizzaService: PizzasService, private pastaService: PastasService) { }
 
-  addPizza(pizza: Pizza): void {
-   // this.http.post('url', pizza).subscribe(res => this.pizzas = res);
-  }
-
-  getPizza(): Observable<Pizza[]> {
-    return this.pizzas.asObservable();
-  }
 
   countBasket(): number {
     return this.basketComponent.countBasket();
   }
 
   addBasketToOrder(): void {
-    let order = this.getOrder();
+    const order = this.getOrder();
 
     const pizzas = this.basketComponent.getPizzasInBasket();
     order.pizzaIds = this.pizzaService.getPizzasIds(pizzas);
@@ -44,4 +37,10 @@ export class BasketService {
   getOrder(): Order {
     return this.basketComponent.getOrder();
   }
+
+  setShowAdress(show: boolean): void {
+    this.basketComponent.setShowAdress(show);
+  }
+
+
 }

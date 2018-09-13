@@ -1,0 +1,26 @@
+#orders {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#orders td, #orders th {
+  border: 1px solid firebrick;
+  padding: 8px;
+}
+
+#orders th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: firebrick;
+  color: #f8ffc0;
+}
+
+#orders td {
+  background-color: #f8ffc0;
+  color: firebrick;
+}
+
+button {
+  color: firebrick;
+}

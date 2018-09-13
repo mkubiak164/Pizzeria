@@ -16,6 +16,11 @@ import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {PizzasService} from './pizzas.service';
 import {BasketService} from './basket.service';
+import { ListComponent } from './list/list.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { SummaryComponent } from './summary/summary.component';
+// import {RoleGuard} from './role-guard';
 
 
 const appRoutes: Routes = [
@@ -27,9 +32,20 @@ const appRoutes: Routes = [
     component: PastasComponent,
     data: {title: 'Pastas List'}
   },
-  { path: 'basket',
-    component: BasketComponent,
-  data: {title: 'Basket'}
+  { path: 'summary',
+    component: SummaryComponent,
+    data: {title: 'Summary'}
+  },
+  { path: 'list',
+    component: ListComponent,
+    data: {title: 'List'}
+  },
+  { path: 'orders',
+    component: OrdersComponent,
+    data: {title: 'Orders'}
+  // },
+  // { path: '/admin', component: AdminPanelComponent,
+  //   canActivate: [RoleGuard]
   }
 
 ];
@@ -45,6 +61,10 @@ const appRoutes: Routes = [
     AdressComponent,
     DrinksComponent,
     DishComponent,
+    ListComponent,
+    OrdersComponent,
+    OrderDetailsComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,

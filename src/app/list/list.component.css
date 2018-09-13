@@ -1,0 +1,26 @@
+#list {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#list td, #list th {
+  border: 1px solid firebrick;
+  padding: 8px;
+}
+
+#list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: firebrick;
+  color: #f8ffc0;
+}
+
+#list td {
+  background-color: #f8ffc0;
+  color: firebrick;
+}
+
+button {
+ color: firebrick;
+}

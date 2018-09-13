@@ -10,14 +10,16 @@ import {BasketService} from './basket.service';
   styleUrls: ['./app.component.css'],
 
   template: `
-    <header>Pizzeria</header>
+    <header>Pizzeria<button>Zaloguj</button></header>
     <nav>
       <a routerLink="/pizzas" routerLinkActive="active">Pizze </a>
       <a routerLink="/pastas" routerLinkActive="active"> Makarony</a>
-      <span>
-      <a routerLink="/basket" routerLinkActive="active">Przejdź do zamówienia</a>
-        <h4>Liczba elementów w koszyku: {{countBasketSize()}}</h4>
-      </span>
+      <a routerLink="/list" routerLinkActive="active">Lista dań</a>
+      <a routerLink="/orders" routerLinkActive="active">Lista zamówień</a>
+      <div>
+      <a routerLink="/summary" routerLinkActive="active">Przejdź do zamówienia</a>
+        <h4>Produktów w koszyku: {{countBasketSize()}}</h4>
+      </div>
     </nav>
     <router-outlet></router-outlet>
   `
