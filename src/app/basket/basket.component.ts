@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 // @ts-ignore
 import {Basket} from '../basket';
-import {Pizza} from '../pizza';
-import {Pasta} from '../pasta';
-import {PizzasService} from '../pizzas.service';
-import {PastasService} from '../pastas.service';
-import {Order} from '../order';
-import {BasketService} from '../basket.service';
+import {Pizza} from '../models/pizza';
+import {Pasta} from '../models/pasta';
+import {PizzasService} from '../pizzas/pizzas.service';
+import {PastasService} from '../pastas/pastas.service';
+import {Order} from '../models/order';
+import {BasketService} from './basket.service';
 
 @Component({
   selector: 'app-basket',

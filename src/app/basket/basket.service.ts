@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Pizza} from './pizza';
-import {Pasta} from './pasta';
+import {Pizza} from '../models/pizza';
+import {Pasta} from '../models/pasta';
 import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {PizzasService} from './pizzas.service';
-import {BasketComponent} from './basket/basket.component';
-import {Order} from './order';
-import {PastasService} from './pastas.service';
+import {PizzasService} from '../pizzas/pizzas.service';
+import {BasketComponent} from './basket.component';
+import {Order} from '../models/order';
+import {PastasService} from '../pastas/pastas.service';
 
 
 @Injectable({

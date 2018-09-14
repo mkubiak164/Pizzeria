@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Pasta} from './pasta';
+import {Pasta} from '../models/pasta';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {PizzasService} from '../pizzas.service';
-import {Pizza} from '../pizza';
+import {PizzasService} from '../pizzas/pizzas.service';
+import {Pizza} from '../models/pizza';
 import {Observable, Subscription} from 'rxjs';
-import {Pasta} from '../pasta';
-import {PastasService} from '../pastas.service';
+import {Pasta} from '../models/pasta';
+import {PastasService} from '../pastas/pastas.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {AdminService} from '../admin.service';
+import {AdminService} from '../services/admin.service';
 
 @Component({
   selector: 'app-list',

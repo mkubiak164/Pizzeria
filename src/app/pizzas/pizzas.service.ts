@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Pizza} from './pizza';
-import {PizzasComponent} from './pizzas/pizzas.component';
+import {Pizza} from '../models/pizza';
+import {PizzasComponent} from './pizzas.component';
 import {forEach} from '@angular/router/src/utils/collection';
 
 @Injectable({

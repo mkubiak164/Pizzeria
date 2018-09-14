@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BasketService} from './basket.service';
+import {BasketService} from './basket/basket.service';
 import {GuardComponent} from './guard/guard.component';
 import {LoginComponent} from './login/login.component';
 import {Router} from '@angular/router';

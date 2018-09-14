@@ -1,9 +1,9 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Order} from './order';
-import {Adress} from './adress';
-import {Status} from './orders/status';
+import {Order} from '../models/order';
+import {Adress} from '../models/adress';
+import {Status} from '../orders/status';
 
 @Injectable({
   providedIn: 'root'

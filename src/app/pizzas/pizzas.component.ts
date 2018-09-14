@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
-import {Pizza} from '../pizza';
-import {PizzasService} from '../pizzas.service';
+import {Pizza} from '../models/pizza';
+import {PizzasService} from './pizzas.service';
 import {Observable, Subscription} from 'rxjs';
-import {BasketService} from '../basket.service';
+import {BasketService} from '../basket/basket.service';
 
 @Component({
   selector: 'app-pizzas',
@@ -41,7 +41,5 @@ export class PizzasComponent implements OnInit, OnDestroy, AfterViewInit {
   addToBasket(pizza: Pizza): void {
     this.service.addPizzaToBasket(pizza);
   }
-
-
 
 }

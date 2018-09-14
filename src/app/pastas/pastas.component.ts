@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Pasta} from '../pasta';
-import {PastasService} from '../pastas.service';
+import {Pasta} from '../models/pasta';
+import {PastasService} from './pastas.service';
 import {Subscription} from 'rxjs';
 
 @Component({

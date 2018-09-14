@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {GuardComponent} from '../guard/guard.component';
 import {Subscription} from 'rxjs';
-import {AdminService} from '../admin.service';
+import {AdminService} from '../services/admin.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     this.sub = this.http.get('http://localhost:3000/users/1').subscribe(
       res => {
-        if (res.login === data.login && res.password === data.password) {
+        if (res['login'] === data.login && res['password'] === data.password) {
           this.adminService.setIsAdmin(true);
           // @ts-ignore
           // this.guard.canActivate = true;

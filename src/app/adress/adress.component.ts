@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {FormGroup, FormControl} from '@angular/forms';
-import {AdressService} from '../adress.service';
+import {AdressService} from '../services/adress.service';
 
 @Component({
   selector: 'app-adress',

@@ -1,5 +1,5 @@
 import {Adress} from './adress';
-import {Status} from './orders/status';
+import {Status} from '../orders/status';
 
 export class Order {
   id: number;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {GuardComponent} from './guard/guard.component';
+import {GuardComponent} from '../guard/guard.component';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +18,4 @@ export class AdminService {
   getIsAdmin(): boolean {
     return this.isAdmin;
   }
-
-  // isAdmin(): boolean {
-  //   return false;
-  // }
-
-  // canActivate() {
-  //   return this.guardComponent.canActivate();
-  // }
-
 }

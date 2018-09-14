@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PizzasComponent } from './pizzas/pizzas.component';
-import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
+import { PizzaDetailComponent } from './pizzas/pizza-detail/pizza-detail.component';
 import { PastasComponent } from './pastas/pastas.component';
 import { BasketComponent } from './basket/basket.component';
 // @ts-ignore
@@ -14,8 +14,8 @@ import { DrinksComponent } from './drinks/drinks.component';
 import { DishComponent } from './dish/dish.component';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
-import {PizzasService} from './pizzas.service';
-import {BasketService} from './basket.service';
+import {PizzasService} from './pizzas/pizzas.service';
+import {BasketService} from './basket/basket.service';
 import { ListComponent } from './list/list.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
@@ -26,6 +26,10 @@ import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
+  // { path: '',
+  //   redirectTo: 'pizzas',
+  //   pathMatch: 'full'
+  // },
   { path: 'pizzas',
     component: PizzasComponent,
     data: {title: 'Pizzas List'}

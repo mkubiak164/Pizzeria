@@ -22,4 +22,5 @@ describe('PizzasComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

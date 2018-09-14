@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Injectable, OnInit, Output} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {AdminService} from '../admin.service';
+import {AdminService} from '../services/admin.service';
 
 @Component({
   selector: 'app-guard',
@@ -12,23 +12,11 @@ import {AdminService} from '../admin.service';
 @Injectable()
 export class GuardComponent implements OnInit, CanActivate {
 
-  // public canActivate: boolean;
-
-  // @Output()
-  // change: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
     this.canActivate();
-    // true zeby dzialalo, false nie dziala
   }
-
-  // canActivate(route: ActivatedRouteSnapshot,
-  //             state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-  //   return true;
-  // }
-
   canActivate() {
     if (this.adminService.getIsAdmin()) {
       return true;
@@ -37,14 +25,5 @@ export class GuardComponent implements OnInit, CanActivate {
       return false;
     }
 
-    // return this.change;
-    // console.log('GuardComponent');
-    // return true;
   }
-
-  // setCanActivate(ca: boolean) {
-  //   this.canActivate = ca;
-  // }
-
-
 }
