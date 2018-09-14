@@ -5,6 +5,7 @@ import {Observable, Subscription} from 'rxjs';
 import {Pasta} from '../pasta';
 import {PastasService} from '../pastas.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {AdminService} from '../admin.service';
 
 @Component({
   selector: 'app-list',
@@ -19,13 +20,15 @@ export class ListComponent implements OnInit {
 
   constructor(private pizzaService: PizzasService,
               private pastaService: PastasService,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private adminService: AdminService) { }
 
   ngOnInit() {
     this.sub = this.pizzaService.getPizzas()
       .subscribe(res => this.pizzas = res);
     this.sub = this.pastaService.getPastas()
       .subscribe(res => this.pastas = res);
+    this.adminService.getIsAdmin();
   }
 
 
