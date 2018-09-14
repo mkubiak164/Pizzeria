@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Order} from '../order';
 import {Subscription} from 'rxjs';
 import {OrdersService} from '../orders.service';
-
-
+import {Status} from './status';
 
 @Component({
   selector: 'app-orders',
@@ -29,6 +28,17 @@ export class OrdersComponent implements OnInit {
 
   getOrder(id: number): Order {
     return this.selectedOrder;
+  }
+
+  statusChanged(order: Order, status: Status): void {
+    this.ordersService.statusChanged(order, status);
+  }
+
+  getStatuses(): Status[] {
+    const s1 = new Status(1, 'w trakcie');
+    const s2 = new Status(2, 'zrealizowano');
+
+    return [s1, s2];
   }
 
 }

@@ -20,6 +20,8 @@ import { ListComponent } from './list/list.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SummaryComponent } from './summary/summary.component';
+import { GuardComponent } from './guard/guard.component';
+import { LoginComponent } from './login/login.component';
 // import {RoleGuard} from './role-guard';
 
 
@@ -38,11 +40,17 @@ const appRoutes: Routes = [
   },
   { path: 'list',
     component: ListComponent,
-    data: {title: 'List'}
+    data: {title: 'List'},
+    canActivate: [GuardComponent]
+  },
+  { path: 'login',
+    component: LoginComponent,
+    data: {title: 'Login'}
   },
   { path: 'orders',
     component: OrdersComponent,
-    data: {title: 'Orders'}
+    data: {title: 'Orders'},
+    canActivate: [GuardComponent]
   // },
   // { path: '/admin', component: AdminPanelComponent,
   //   canActivate: [RoleGuard]
@@ -65,6 +73,8 @@ const appRoutes: Routes = [
     OrdersComponent,
     OrderDetailsComponent,
     SummaryComponent,
+    GuardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +86,13 @@ const appRoutes: Routes = [
     ),
 
   ],
-  providers: [PizzasService, BasketService, BasketComponent, AdressComponent],
+  providers: [PizzasService,
+    BasketService,
+    BasketComponent,
+    AdressComponent,
+    GuardComponent,
+    LoginComponent],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

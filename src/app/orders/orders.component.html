@@ -12,7 +12,13 @@
     <td>{{order.id}}</td>
     <td>{{order.adress.street + " " + order.adress.number + " piętro: " + order.adress.floor + ", " + order.adress.country}}</td>
     <td>40 minut</td>
-    <td>w trakcie</td>
+    <td>
+      <select>
+        <option *ngFor="let status of getStatuses()" value="status.id" (change)="statusChanged(order, status)">
+          {{status.name}}
+        </option>
+      </select>
+    </td>
     <td><button>Podlgąd</button></td>
   </tr>
 </table>
