@@ -27,6 +27,4 @@ export class AdressService {
     alert('Zamowienie przyjete!');
   }
 
-
-
 }

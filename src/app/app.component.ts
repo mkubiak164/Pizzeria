@@ -19,7 +19,7 @@ import {Router} from '@angular/router';
       <a *ngIf="isAdmin()" routerLink="/orders" routerLinkActive="active">Lista zamówień</a>
       <div>
       <a routerLink="/summary" routerLinkActive="active">Przejdź do zamówienia</a>
-        <h4>Produktów w koszyku: {{countBasketSize()}}</h4>
+        <h4>Produktów w koszyku: {{ basketService.countBasket() }}</h4>
       </div>
     </nav>
     <router-outlet></router-outlet>
@@ -28,15 +28,10 @@ import {Router} from '@angular/router';
 export class AppComponent {
 
   constructor(private http: HttpClient,
-              private basketService: BasketService,
+              public basketService: BasketService,
               private guard: GuardComponent,
               private loginComponent: LoginComponent,
               private router: Router) { }
-
-
-  countBasketSize(): number {
-    return this.basketService.countBasket();
-  }
 
   isAdmin() {
     return this.guard.canActivate;

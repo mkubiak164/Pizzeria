@@ -4,7 +4,6 @@ import {Pasta} from '../models/pasta';
 import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {PizzasService} from '../pizzas/pizzas.service';
-import {BasketComponent} from './basket.component';
 import {Order} from '../models/order';
 import {PastasService} from '../pastas/pastas.service';
 
@@ -14,33 +13,31 @@ import {PastasService} from '../pastas/pastas.service';
 })
 export class BasketService {
 
-  pastas: Pasta[];
+  order: Order = new Order();
+  showAdress: boolean;
 
-  constructor(readonly http: HttpClient, private basketComponent: BasketComponent,
+  constructor(readonly http: HttpClient,
               private pizzaService: PizzasService, private pastaService: PastasService) { }
 
-
   countBasket(): number {
-    return this.basketComponent.countBasket();
+    return this.pizzaService.getPizzasInBasket().length + this.pastaService.getPastasInBasket().length;
   }
 
   addBasketToOrder(): void {
     const order = this.getOrder();
 
-    const pizzas = this.basketComponent.getPizzasInBasket();
+    const pizzas = this.pizzaService.getPizzasInBasket();
     order.pizzaIds = this.pizzaService.getPizzasIds(pizzas);
 
-    const pastas = this.basketComponent.getPastasInBasket();
+    const pastas = this.pastaService.getPastasInBasket();
     order.pastaIds = this.pastaService.getPastaIds(pastas);
   }
 
   getOrder(): Order {
-    return this.basketComponent.getOrder();
+    return this.order;
   }
 
-  setShowAdress(show: boolean): void {
-    this.basketComponent.setShowAdress(show);
+  setShowAdress(show: boolean) {
+    this.showAdress = show;
   }
-
-
 }

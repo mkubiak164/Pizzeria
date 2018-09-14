@@ -17,13 +17,11 @@ export class BasketComponent implements OnInit {
 
   pizzas: Pizza[];
   pastas: Pasta[];
-  order: Order = new Order();
-  showAdress: boolean;
 
-  constructor(private pizzaService: PizzasService, private pastaService: PastasService) { }
+  constructor(private pizzaService: PizzasService, private pastaService: PastasService, private basketService: BasketService) { }
 
   ngOnInit() {
-    this.setShowAdress(true);
+    this.basketService.setShowAdress(true);
   }
 
   getPizzasInBasket(): Pizza[] {
@@ -32,18 +30,6 @@ export class BasketComponent implements OnInit {
 
   getPastasInBasket(): Pasta[] {
     return this.pastaService.getPastasInBasket();
-  }
-
-  countBasket(): number {
-    return this.getPizzasInBasket().length + this.getPastasInBasket().length;
-  }
-
-  getOrder(): Order {
-    return this.order;
-  }
-
-  setShowAdress(show: boolean) {
-    this.showAdress = show;
   }
 
 }
