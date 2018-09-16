@@ -6,6 +6,7 @@ import {Pasta} from '../models/pasta';
 import {PastasService} from '../pastas/pastas.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AdminService} from '../services/admin.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -17,11 +18,14 @@ export class ListComponent implements OnInit {
   pizzas: Pizza[] = [];
   pastas: Pasta[] = [];
   sub: Subscription;
+  pizza: Pizza;
 
   constructor(private pizzaService: PizzasService,
               private pastaService: PastasService,
               private http: HttpClient,
-              private adminService: AdminService) { }
+              private adminService: AdminService,
+              private router: Router
+              ) { }
 
   ngOnInit() {
     this.sub = this.pizzaService.getPizzas()
@@ -52,6 +56,12 @@ export class ListComponent implements OnInit {
     }).subscribe(
       res => alert('Zmieniono dostepnosc')
     );
+  }
+
+  onSelect(pizza: Pizza): void {
+    this.pizza = pizza;
+    this.router.navigate(['/pizzas', pizza.id]);
+    // this.pizzaService.onSelect(pizza);
   }
 
 }

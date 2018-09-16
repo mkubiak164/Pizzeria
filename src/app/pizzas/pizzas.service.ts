@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pizza} from '../models/pizza';
-import {PizzasComponent} from './pizzas.component';
-import {forEach} from '@angular/router/src/utils/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +9,18 @@ import {forEach} from '@angular/router/src/utils/collection';
 export class PizzasService {
 
   basket: Pizza[] = [];
-  private angular: any;
+  selectedPizza: Pizza;
 
   constructor(
     readonly http: HttpClient,
   ) { }
-
-
 
   getPizzas(): Observable<Pizza[]> {
     return this.http.get<Pizza[]>('http://localhost:3000/pizzas');
   }
 
   getPizza(id: number): Observable<Pizza> {
-    return this.http.get<Pizza>('api/pizzas/${id}');
+    return this.http.get<Pizza>('http://localhost:3000/pizzas/' + id);
   }
 
   addPizzaToBasket(pizza: Pizza): void {
@@ -41,6 +37,10 @@ export class PizzasService {
 
   getPizzasInBasket(): Pizza[] {
     return this.basket;
+  }
+
+  onSelect(pizza: Pizza): void {
+    this.selectedPizza = pizza;
   }
 
 }

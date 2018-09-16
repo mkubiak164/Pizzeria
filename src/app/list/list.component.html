@@ -15,8 +15,15 @@
     <td><input type="checkbox" [checked]="pizza.isAvailable" (change)="pizzaAvailabilityChanged(pizza)"></td>
     <!--<td *ngIf="pizza.isAvailable; else elseBlock;">&#10004;</td>-->
     <td>{{pizza.price}}</td>
-    <td><button>Podgląd</button></td>
+    <td>
+      <button (click)="onSelect(pizza)">Podgląd
+      <!--[class.selected]="pizza===pizza"-->
+      </button>
+    </td>
   </tr>
+
+  <!--<app-pizza-detail [pizza]="pizza"></app-pizza-detail>-->
+
   <tr *ngFor="let pasta of getPastas()">
     <td >{{pasta.id}}</td>
     <td>{{pasta.name}}</td>

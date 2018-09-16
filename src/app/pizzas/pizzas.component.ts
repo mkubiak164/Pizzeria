@@ -10,7 +10,7 @@ import {BasketService} from '../basket/basket.service';
   styleUrls: ['./pizzas.component.css'],
 })
 export class PizzasComponent implements OnInit, OnDestroy, AfterViewInit {
-  selectedPizza: Pizza;
+  // selectedPizza: Pizza;
   pizzas: Pizza[] = [];
   sub: Subscription;
 
@@ -31,7 +31,7 @@ export class PizzasComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onSelect(pizza: Pizza): void {
-    this.selectedPizza = pizza;
+    this.service.onSelect(pizza);
   }
 
   getPizzas(): Pizza[] {

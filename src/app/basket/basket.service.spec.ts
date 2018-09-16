@@ -64,11 +64,21 @@ describe('BasketService', () => {
     const pastaService = TestBed.get(PastasService);
     const pastaServiceSpy = spyOn(pastaService, 'getPastasInBasket');
     const pasta: Pasta[] = [];
+    // const pasta: Pasta[] = [new Pasta(), new Pasta(), new Pasta()];
     pastaServiceSpy.and.returnValues(pasta);
     const count = basketService.countBasket();
     expect(count).toEqual(0);
   });
 
+  it('should return 3', () => {
+    const basketService = TestBed.get(BasketService);
+    const pastaService = TestBed.get(PastasService);
+    const pastaServiceSpy = spyOn(pastaService, 'getPastasInBasket');
+    const pasta: Pasta[] = [new Pasta(), new Pasta(), new Pasta()];
+    pastaServiceSpy.and.returnValues(pasta);
+    const count = basketService.countBasket();
+    expect(count).toEqual(3);
+  });
 
 
 });

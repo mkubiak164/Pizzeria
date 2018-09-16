@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Pizza} from '../models/pizza';
-import {Pasta} from '../models/pasta';
-import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {PizzasService} from '../pizzas/pizzas.service';
 import {Order} from '../models/order';
 import {PastasService} from '../pastas/pastas.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -41,3 +37,4 @@ export class BasketService {
     this.showAdress = show;
   }
 }
+

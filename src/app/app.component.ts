@@ -18,7 +18,7 @@ import {Router} from '@angular/router';
       <a *ngIf="isAdmin()" routerLink="/list" routerLinkActive="active">Lista dań</a>
       <a *ngIf="isAdmin()" routerLink="/orders" routerLinkActive="active">Lista zamówień</a>
       <div>
-      <a routerLink="/summary" routerLinkActive="active">Przejdź do zamówienia</a>
+      <a routerLink="/summary" routerLinkActive="active">Zamówienie</a>
         <h4>Produktów w koszyku: {{ basketService.countBasket() }}</h4>
       </div>
     </nav>

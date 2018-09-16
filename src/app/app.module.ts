@@ -34,6 +34,11 @@ const appRoutes: Routes = [
     component: PizzasComponent,
     data: {title: 'Pizzas List'}
   },
+  { path: 'pizzas/:id',
+    component: PizzaDetailComponent,
+    data: {title: 'Overview'},
+    canActivate: [GuardComponent]
+  },
   { path: 'pastas',
     component: PastasComponent,
     data: {title: 'Pastas List'}
