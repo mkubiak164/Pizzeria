@@ -12,7 +12,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DishComponent } from './dish/dish.component';
-import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {PizzasService} from './pizzas/pizzas.service';
 import {BasketService} from './basket/basket.service';
@@ -20,17 +19,16 @@ import { ListComponent } from './list/list.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './orders/order-details/order-details.component';
 import { SummaryComponent } from './summary/summary.component';
-import { GuardComponent } from './guard/guard.component';
+import { AdminGuard } from './guards/admin.guard';
 import { LoginComponent } from './login/login.component';
 import { PastaDetailComponent } from './pastas/pasta-detail/pasta-detail.component';
-// import {RoleGuard} from './role-guard';
 
 
 const appRoutes: Routes = [
-  // { path: '',
-  //   redirectTo: 'pizzas',
-  //   pathMatch: 'full'
-  // },
+  { path: '',
+    redirectTo: 'pizzas',
+    pathMatch: 'full'
+  },
   { path: 'pizzas',
     component: PizzasComponent,
     data: {title: 'Pizzas List'}
@@ -38,7 +36,7 @@ const appRoutes: Routes = [
   { path: 'pizzas/:id',
     component: PizzaDetailComponent,
     data: {title: 'Overview'},
-    canActivate: [GuardComponent]
+    // canActivate: [AdminGuard]
   },
   { path: 'pastas',
     component: PastasComponent,
@@ -47,7 +45,7 @@ const appRoutes: Routes = [
   { path: 'pastas/:id',
     component: PastaDetailComponent,
     data: {title: 'Overview2'},
-    canActivate: [GuardComponent]
+    canActivate: [AdminGuard]
   },
   { path: 'summary',
     component: SummaryComponent,
@@ -56,7 +54,7 @@ const appRoutes: Routes = [
   { path: 'list',
     component: ListComponent,
     data: {title: 'List'},
-    canActivate: [GuardComponent]
+    canActivate: [AdminGuard]
   },
   { path: 'login',
     component: LoginComponent,
@@ -65,7 +63,7 @@ const appRoutes: Routes = [
   { path: 'orders',
     component: OrdersComponent,
     data: {title: 'Orders'},
-    canActivate: [GuardComponent]
+    canActivate: [AdminGuard]
   // },
   // { path: '/admin', component: AdminPanelComponent,
   //   canActivate: [RoleGuard]
@@ -73,7 +71,7 @@ const appRoutes: Routes = [
   { path: 'orders/:id',
     component: OrderDetailsComponent,
     data: {title: 'Overview3'},
-    canActivate: [GuardComponent]
+    canActivate: [AdminGuard]
   }
 
 ];
@@ -93,7 +91,6 @@ const appRoutes: Routes = [
     OrdersComponent,
     OrderDetailsComponent,
     SummaryComponent,
-    GuardComponent,
     LoginComponent,
     PastaDetailComponent,
   ],
@@ -105,13 +102,12 @@ const appRoutes: Routes = [
       appRoutes,
       {enableTracing: true}
     ),
-
   ],
   providers: [PizzasService,
     BasketService,
     BasketComponent,
     AdressComponent,
-    GuardComponent,
+    AdminGuard,
     LoginComponent],
 
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {Order} from '../models/order';
 import {Status} from './status';
 import {AdminService} from '../services/admin.service';
-import {GuardComponent} from '../guard/guard.component';
+import {AdminGuard} from '../guards/admin.guard';
 
 class ActivatedRouteMock {
   snapshot: {
@@ -35,7 +35,7 @@ describe('OrdersComponent', () => {
         HttpClient,
         HttpHandler,
         AdminService,
-        GuardComponent,
+        AdminGuard,
         OrdersComponent
       ],
       imports: [RouterTestingModule]
@@ -62,7 +62,7 @@ describe('OrdersComponent', () => {
   // });
   //
   // it('should return true if user id admin', () => {
-  //   const guardComponent = TestBed.get(GuardComponent);
+  //   const guardComponent = TestBed.get(AdminGuard);
   //   const canActivateSpy = spyOn(guardComponent, 'canActivate');
   //   canActivateSpy.and.returnValue(true);
   //   expect(canActivateSpy).toEqual(true);

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuardComponent } from './guard.component';
+import { AdminGuard } from './admin.guard';
 
-describe('GuardComponent', () => {
-  let component: GuardComponent;
-  let fixture: ComponentFixture<GuardComponent>;
+describe('AdminGuard', () => {
+  let component: AdminGuard;
+  let fixture: ComponentFixture<AdminGuard>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuardComponent ]
+      declarations: [ AdminGuard ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuardComponent);
+    fixture = TestBed.createComponent(AdminGuard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

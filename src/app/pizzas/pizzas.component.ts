@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Pizza} from '../models/pizza';
 import {PizzasService} from './pizzas.service';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {BasketService} from '../basket/basket.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {BasketService} from '../basket/basket.service';
   templateUrl: './pizzas.component.html',
   styleUrls: ['./pizzas.component.css'],
 })
-export class PizzasComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PizzasComponent implements OnInit, OnDestroy {
   // selectedPizza: Pizza;
   pizzas: Pizza[] = [];
   sub: Subscription;
@@ -21,9 +21,6 @@ export class PizzasComponent implements OnInit, OnDestroy, AfterViewInit {
     this.sub = this.service.getPizzas()
       .subscribe(res => this.pizzas = res);
     this.basketService.setShowAdress(false);
-  }
-
-  ngAfterViewInit() {
   }
 
   ngOnDestroy(): void {

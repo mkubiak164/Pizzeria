@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {GuardComponent} from '../guard/guard.component';
+import {AdminGuard} from '../guards/admin.guard';
 import {Subscription} from 'rxjs';
 import {AdminService} from '../services/admin.service';
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder,
               private http: HttpClient,
               private router: Router,
-              private guard: GuardComponent,
+              private guard: AdminGuard,
               private adminService: AdminService) { }
 
   onSubmit() {

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {GuardComponent} from '../guard/guard.component';
 
 @Injectable({
   providedIn: 'root'
