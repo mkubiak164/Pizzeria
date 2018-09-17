@@ -32,13 +32,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       res => {
         if (res['login'] === data.login && res['password'] === data.password) {
           this.adminService.setIsAdmin(true);
-          // @ts-ignore
-          // this.guard.canActivate = true;
-          // this.guard.test(true);
-          // this.guard.setCanActivate(true);
           this.router.navigateByUrl('/');
+          alert('Witaj admin!');
         } else {
-          alert('zle dane!');
+          alert('złe dane!');
         }
       }
     );

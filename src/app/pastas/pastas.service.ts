@@ -19,7 +19,7 @@ export class PastasService {
   }
 
   getPasta(id: number): Observable<Pasta> {
-    return this.http.get<Pasta>('api/pastas/${id}');
+    return this.http.get<Pasta>('http://localhost:3000/pastas/' + id);
   }
 
   getPastaIds(pastas: Pasta[]): number[] {

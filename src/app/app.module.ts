@@ -18,10 +18,11 @@ import {PizzasService} from './pizzas/pizzas.service';
 import {BasketService} from './basket/basket.service';
 import { ListComponent } from './list/list.component';
 import { OrdersComponent } from './orders/orders.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrderDetailsComponent } from './orders/order-details/order-details.component';
 import { SummaryComponent } from './summary/summary.component';
 import { GuardComponent } from './guard/guard.component';
 import { LoginComponent } from './login/login.component';
+import { PastaDetailComponent } from './pastas/pasta-detail/pasta-detail.component';
 // import {RoleGuard} from './role-guard';
 
 
@@ -43,6 +44,11 @@ const appRoutes: Routes = [
     component: PastasComponent,
     data: {title: 'Pastas List'}
   },
+  { path: 'pastas/:id',
+    component: PastaDetailComponent,
+    data: {title: 'Overview2'},
+    canActivate: [GuardComponent]
+  },
   { path: 'summary',
     component: SummaryComponent,
     data: {title: 'Summary'}
@@ -63,6 +69,11 @@ const appRoutes: Routes = [
   // },
   // { path: '/admin', component: AdminPanelComponent,
   //   canActivate: [RoleGuard]
+  },
+  { path: 'orders/:id',
+    component: OrderDetailsComponent,
+    data: {title: 'Overview3'},
+    canActivate: [GuardComponent]
   }
 
 ];
@@ -84,6 +95,7 @@ const appRoutes: Routes = [
     SummaryComponent,
     GuardComponent,
     LoginComponent,
+    PastaDetailComponent,
   ],
   imports: [
     BrowserModule,

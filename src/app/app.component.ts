@@ -11,7 +11,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css'],
 
   template: `
-    <header>Pizzeria<button (click)="openLogin()">Zaloguj</button></header>
+    <header>Pizzeria<button (click)="openLogin()">Zaloguj</button>
+      <!--<header>Pizzeria<button *ngIf="!isAdmin(); else elseBlock" (click)="openLogin()">Zaloguj</button>-->
+    <!--<ng-template #elseBlock>-->
+      <!--<a class="welcome">Jesteś zalogowany</a>-->
+    <!--</ng-template>-->
+    </header>
     <nav>
       <a routerLink="/pizzas" routerLinkActive="active">Pizze </a>
       <a routerLink="/pastas" routerLinkActive="active"> Makarony</a>
@@ -35,8 +40,6 @@ export class AppComponent {
 
   isAdmin() {
     return this.guard.canActivate;
-    // return this.guard.test();
-    // return this.guard.change;
   }
 
   openLogin() {

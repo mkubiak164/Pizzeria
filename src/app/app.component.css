@@ -26,3 +26,7 @@ button {
   font-size: x-large;
 }
 
+.welcome {
+  display: inline-block;
+  font-size: 20px;
+}

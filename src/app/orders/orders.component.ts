@@ -3,6 +3,7 @@ import {Order} from '../models/order';
 import {Subscription} from 'rxjs';
 import {OrdersService} from '../services/orders.service';
 import {Status} from './status';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -14,8 +15,11 @@ export class OrdersComponent implements OnInit {
   orders: Order[] = [];
   sub: Subscription;
   selectedOrder: Order;
+  order: Order;
 
-  constructor(private ordersService: OrdersService) { }
+  constructor(private ordersService: OrdersService,
+              private router: Router
+              ) { }
 
   ngOnInit() {
     this.sub = this.ordersService.getOrders()
@@ -39,6 +43,11 @@ export class OrdersComponent implements OnInit {
     const s2 = new Status(2, 'zrealizowano');
 
     return [s1, s2];
+  }
+
+  onSelect(order: Order): void {
+    this.order = order;
+    this.router.navigate(['/orders', order.id]);
   }
 
 }

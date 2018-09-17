@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
   pastas: Pasta[] = [];
   sub: Subscription;
   pizza: Pizza;
+  pasta: Pasta;
 
   constructor(private pizzaService: PizzasService,
               private pastaService: PastasService,
@@ -58,10 +59,28 @@ export class ListComponent implements OnInit {
     );
   }
 
+  pastaAvailabilityChanged(pasta: Pasta): void {
+    const url = 'http://localhost:3000/pastas/' + pasta.id;
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json');
+
+    pasta.isAvailable = !pasta.isAvailable;
+
+    this.http.put(url, pasta, {
+      headers: headers
+    }).subscribe(
+      res => alert('Zmieniono dostepnosc')
+    );
+  }
+
   onSelect(pizza: Pizza): void {
     this.pizza = pizza;
     this.router.navigate(['/pizzas', pizza.id]);
-    // this.pizzaService.onSelect(pizza);
+  }
+
+  onSelect2(pasta: Pasta): void {
+    this.pasta = pasta;
+    this.router.navigate(['/pastas', pasta.id]);
   }
 
 }
