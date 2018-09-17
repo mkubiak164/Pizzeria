@@ -27,10 +27,6 @@ export class PizzasComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  onSelect(pizza: Pizza): void {
-    this.service.onSelect(pizza);
-  }
-
   getPizzas(): Pizza[] {
     return this.pizzas;
   }

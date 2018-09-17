@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {OrderService} from '../order.service';
 import {Order} from '../../models/order';
+import {Pizza} from '../../models/pizza';
 
 @Component({
   selector: 'app-order-details',
@@ -26,6 +27,10 @@ export class OrderDetailsComponent implements OnInit {
 
   getOrders() {
     return this.orderService.getOrders();
+  }
+
+  getPizzasFromOrder(order: Order): Pizza[] {
+    return this.orderService.getPizzasFromOrder(order);
   }
 
 }

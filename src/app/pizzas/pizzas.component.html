@@ -7,7 +7,7 @@
      <li *ngFor="let pizza of getPizzas()">
        <div *ngIf="pizza.isAvailable; else elseBlock">
        <span class="badge">{{pizza.id}}</span>
-         <span>{{pizza.name}}  {{pizza.price}}</span>
+         <span>{{pizza.name}}  {{pizza.price}} zł</span>
        <br>
        <span class="description">{{pizza.description}}
          <button (click)="addToBasket(pizza)">Dodaj do koszyka</button>

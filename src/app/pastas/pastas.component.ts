@@ -24,10 +24,6 @@ export class PastasComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
-  onSelect(pasta: Pasta): void {
-    this.selectedPasta = pasta;
-  }
   getPastas(): Pasta[] {
     return this.pastas;
   }

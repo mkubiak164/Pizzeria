@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {BasketService} from '../basket/basket.service';
-import {AdressComponent} from '../adress/adress.component';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({

@@ -8,7 +8,10 @@
 <th>Składniki</th>
 <th>Cena</th>
 </thead>
-<!--<tr *ngFor="let order of getOrders()">-->
+<tr *ngFor="let pizza of getPizzasFromOrder(order)">
+  <td>{{pizza.name}}</td>
+  <td>{{pizza.description}}</td>
+  <td>{{pizza.price}}</td>
   <!--<td>{{order.id}}</td>-->
   <!--<td>{{order.pizzaIds.getPizza()}}</td>-->
   <!--<td>{{order.pizzaIds.getDetails}}</td>-->

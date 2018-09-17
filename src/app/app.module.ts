@@ -11,7 +11,6 @@ import { AdressComponent } from './adress/adress.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import { DrinksComponent } from './drinks/drinks.component';
-import { DishComponent } from './dish/dish.component';
 import {HttpClientModule} from '@angular/common/http';
 import {PizzasService} from './pizzas/pizzas.service';
 import {BasketService} from './basket/basket.service';
@@ -25,10 +24,10 @@ import { PastaDetailComponent } from './pastas/pasta-detail/pasta-detail.compone
 
 
 const appRoutes: Routes = [
-  { path: '',
-    redirectTo: 'pizzas',
-    pathMatch: 'full'
-  },
+  // { path: '',
+  //   redirectTo: 'pizzas',
+  //   pathMatch: 'full'
+  // },
   { path: 'pizzas',
     component: PizzasComponent,
     data: {title: 'Pizzas List'}
@@ -64,9 +63,6 @@ const appRoutes: Routes = [
     component: OrdersComponent,
     data: {title: 'Orders'},
     canActivate: [AdminGuard]
-  // },
-  // { path: '/admin', component: AdminPanelComponent,
-  //   canActivate: [RoleGuard]
   },
   { path: 'orders/:id',
     component: OrderDetailsComponent,
@@ -86,7 +82,6 @@ const appRoutes: Routes = [
     BasketComponent,
     AdressComponent,
     DrinksComponent,
-    DishComponent,
     ListComponent,
     OrdersComponent,
     OrderDetailsComponent,

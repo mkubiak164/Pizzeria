@@ -6,7 +6,7 @@
   <li *ngFor="let pasta of getPastas()">
     <div *ngIf="pasta.isAvailable; else elseBlock">
       <span class="badge">{{pasta.id}}</span>
-      <span>{{pasta.name}} {{pasta.price}}</span>
+      <span>{{pasta.name}} {{pasta.price}} zł</span>
       <br>
       <span class="description">{{pasta.description}}
       <button (click)="addToBasket(pasta)">Dodaj do koszyka</button>

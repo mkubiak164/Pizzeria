@@ -5,7 +5,6 @@ import {Pizza} from '../models/pizza';
 import {Pasta} from '../models/pasta';
 import {PizzasService} from '../pizzas/pizzas.service';
 import {PastasService} from '../pastas/pastas.service';
-import {Order} from '../models/order';
 import {BasketService} from './basket.service';
 
 @Component({

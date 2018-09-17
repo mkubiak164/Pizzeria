@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -11,7 +11,7 @@ import {AdminService} from '../services/admin.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent {
 
   sub: Subscription;
   loginData = new FormGroup({
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
               private http: HttpClient,
               private router: Router,
               private guard: AdminGuard,
-              private adminService: AdminService) { }
+              private adminService: AdminService) {}
 
   onSubmit() {
     const data = this.loginData.value;
@@ -40,12 +40,4 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     );
   }
-
-  ngOnInit() {
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
-
 }

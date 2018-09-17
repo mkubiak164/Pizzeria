@@ -27,9 +27,4 @@ export class AdressComponent {
   onSubmit() {
     this.adressService.save(this.adressData.value);
   }
-
-  getAdressData() {
-    return this.adressData;
-  }
-
 }
