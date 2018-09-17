@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {OrderService} from '../order.service';
 import {Order} from '../../models/order';
 import {Pizza} from '../../models/pizza';
+import {PizzasService} from '../../pizzas/pizzas.service';
 
 @Component({
   selector: 'app-order-details',
@@ -15,7 +16,8 @@ export class OrderDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private pizzaService: PizzasService
   ) { }
 
   ngOnInit() {
@@ -25,12 +27,15 @@ export class OrderDetailsComponent implements OnInit {
     );
   }
 
-  getOrders() {
-    return this.orderService.getOrders();
-  }
+  getPizzasFromOrder(): Pizza[] {
+    let pizzas: Pizza[] = [];
+    // for (let i = 0; i < this.order.pizzaIds.length; i++) {
+    //   this.pizzaService.getPizza(this.order.pizzaIds[i]).subscribe(
+    //       r => pizzas.push(r)
+    //   );
+    // }
 
-  getPizzasFromOrder(order: Order): Pizza[] {
-    return this.orderService.getPizzasFromOrder(order);
+    return pizzas;
   }
 
 }

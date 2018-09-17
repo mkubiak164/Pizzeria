@@ -27,18 +27,13 @@ describe('BasketComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should return 2 pizzas from basket', () => {
-  //   const pizzaService = TestBed.get(PizzasService);
-  //   const pizzaServiceSpy = spyOn(pizzaService, 'getPizzasInBasket');
-  //   const pizza: Pizza[] = [new Pizza(), new Pizza()];
-  //   const testedPizza = pizzaServiceSpy.and.returnValues(pizza);
-  //   component.getPizzasInBasket();
-  //   expect(testedPizza.length).toEqual(2);
-  // });
+  it('should return 2 pizzas from basket', () => {
+    const pizzaService = TestBed.get(PizzasService);
+    const pizzaServiceSpy = spyOn(pizzaService, 'getPizzasInBasket');
+    const pizza: Pizza[] = [new Pizza(), new Pizza()];
+    pizzaServiceSpy.and.returnValues(pizza);
+    const pizzasInBasket = component.getPizzasInBasket();
+    expect(pizzasInBasket.length).toEqual(2);
+  });
 
 });
-
-
-// getPizzasInBasket(): Pizza[] {
-//   return this.pizzaService.getPizzasInBasket();
-// }

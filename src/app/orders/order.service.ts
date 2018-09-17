@@ -20,16 +20,15 @@ export class OrderService {
   }
 
   getOrder(id: number): Observable<Order> {
-    return this.htttp.get<Order>('http://localhost:3000/orders' + id);
+    return this.htttp.get<Order>('http://localhost:3000/orders/' + id);
   }
 
   getPizzasFromOrder(order: Order): Pizza[] {
-    const ids: number[] = order.pizzaIds;
     const pizzas: Pizza[] = [];
-    for (let i = 0; i < ids.length; i++) {
-      const pizza = this.pizzaService.getPizza(ids[i]);
-      // @ts-ignore
-      pizzas.push(pizza);
+    for (let i = 0; i < order.pizzaIds.length; i++) {
+      const pizza = this.pizzaService.getPizza(order.pizzaIds[i]).subscribe(
+        res => pizzas.push(res)
+      );
     }
     return pizzas;
   }

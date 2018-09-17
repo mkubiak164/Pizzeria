@@ -1,4 +1,3 @@
-
 <h2>Zamówienie nr: {{order.id}}</h2>
 
 <table id="order-details">
@@ -8,7 +7,7 @@
 <th>Składniki</th>
 <th>Cena</th>
 </thead>
-<tr *ngFor="let pizza of getPizzasFromOrder(order)">
+<tr *ngFor="let pizza of getPizzasFromOrder()">
   <td>{{pizza.name}}</td>
   <td>{{pizza.description}}</td>
   <td>{{pizza.price}}</td>
@@ -22,15 +21,3 @@
 <h4>Cena zamówienia: </h4>
 <h4>Aktualny stan zamówienia: {{order.status}}</h4>
 <h4>Zmień stan zamówienia</h4>
-
-
-
-
-<!--export class Order {-->
-<!--id: number;-->
-<!--pizzaIds: number[];-->
-<!--pastaIds: number[];-->
-<!--drinkIds: number[];-->
-<!--status: Status;-->
-<!--adress: Adress;-->
-<!--}-->
